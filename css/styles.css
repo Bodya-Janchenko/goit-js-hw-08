@@ -1,7 +1,22 @@
 .gallery {
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 1128px;
+  flex-wrap: wrap;
 }
 
-.gallery-item {
-  list-style-type: none;
+.modal-container .basicLightbox__placeholder {
+  background-color: #2e2f42cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }

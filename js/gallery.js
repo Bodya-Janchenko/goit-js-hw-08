@@ -83,16 +83,24 @@ ulEl.innerHTML = images
   .join("");
 
 ulEl.addEventListener("click", (event) => {
-  event.target.preventDefault();
+  event.preventDefault();
   const imgEl = event.target;
   if (imgEl.nodeName !== "IMG") {
     return;
   }
   const largeImageURL = imgEl.dataset.source;
+  const altText = imgEl.alt;
 
-  const instance = basicLightbox.create(`
-    <img src="${largeImageURL}" alt="${altText}" width="800" height="600">
-  `);
+  const instance = basicLightbox.create(
+    `
+    <div class="custom-modal">
+        <img src="${largeImageURL}" alt="${altText}" width="1112" height="640" />
+    </div>
+  `,
+    {
+      className: "modal-container",
+    }
+  );
 
   instance.show();
 });
