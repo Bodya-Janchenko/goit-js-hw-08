@@ -91,16 +91,11 @@ ulEl.addEventListener("click", (event) => {
   const largeImageURL = imgEl.dataset.source;
   const altText = imgEl.alt;
 
-  const instance = basicLightbox.create(
-    `
-    <div class="custom-modal">
-        <img src="${largeImageURL}" alt="${altText}" width="1112" height="640" />
+  const instance = basicLightbox.create(`
+    <div class="modal">
+      <img src="${largeImageURL}" alt="${altText}" />
     </div>
-  `,
-    {
-      className: "modal-container",
-    }
-  );
+  `);
 
   instance.show();
 });
